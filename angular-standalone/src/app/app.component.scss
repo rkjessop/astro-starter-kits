@@ -1,0 +1,74 @@
+@use "sass:math" as math;
+
+$classificationHeight: 20px;
+$statusBarHeight: 96px;
+$fixedHeight: 116px;
+
+.classification {
+  text-align: center;
+  background-color: green;
+}
+
+rux-global-status-bar {
+  z-index: 100; // fix for popup sometimes appearing beneath items in the body
+}
+
+// rux-clock:part(rux-clock__segment__label-value) {
+::ng-deep rux-global-status-bar rux-clock {
+  color: red;
+  margin: 0 auto;  
+}
+
+.app-switcher-icon:focus {
+  outline-offset: -1px;
+}
+
+.global-status-bar_status-indicators {
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+#popup-menu {
+  height: calc(var(--spacing-14) + var(--spacing-050));
+}
+
+rux-menu-item[value='themeToggle'] span {
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: center;
+}
+
+.dashboard-page {
+  background-color: blue;
+  display: grid;
+  height: calc(100vh - $fixedHeight);
+  padding: var(--spacing-3);
+  gap: var(--spacing-2);
+  grid-template-columns: minmax(37.5rem, 1fr) minmax(0, 2fr);
+  grid-template-rows: 3.75rem minmax(0, 1fr);
+  grid-template-areas:
+    'left-panel tabs-bar'
+    'left-panel right-panel'
+    'left-panel right-panel';
+}
+
+.dashboard-page rux-container::part(body) {
+  padding: 0;
+}
+
+.dashboard-page_left-panel {
+  grid-area: left-panel;
+  background-color: pink;
+}
+
+.tabs-bar {
+  grid-area: tabs-bar;
+  background-color: lawngreen;
+}
+
+.dashboard-page_right-panel {
+  grid-area: right-panel;
+  background-color: coral;
+}

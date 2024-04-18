@@ -1,3 +1,51 @@
-<rux-global-status-bar app-name="Astro">
+<div class="classification">{{systemClassification}}</div>
 
+<!-- hover:app-name="{{applicationName}} v{{version}}" -->
+<rux-global-status-bar 
+  app-domain="NG"
+  app-name="Orbital Mechanics Workbench"
+  username="richard.jessop"
+  app-state="Operational Prototype"
+  version="0.1"
+  menu-icon="apps"
+  >
+  <rux-pop-up
+    id="popup-menu"
+    slot='left-side'
+    placement="'bottom-start"
+    closeOnSelect
+    >
+    <rux-icon
+      className='app-switcher-icon'
+      icon='apps'
+      aria-controls='popup-menu'
+      slot='trigger'
+      size='2rem'
+    />
+    <!-- onRuxmenuselected={(e) => menuSelect(e)} -->
+    <rux-menu ruxmenuselected="menuSelect(e)">
+      <rux-menu-item>GRM Dashboard</rux-menu-item>
+      <rux-menu-item href='https://grm-equipment-react-ts.netlify.app'>GRM Equipment Manager</rux-menu-item>
+      <rux-menu-item href='https://grm-schedule-react.netlify.app/'>GRM Schedule</rux-menu-item>
+      <rux-menu-item-divider/>
+      <rux-menu-item value='themeToggle'></rux-menu-item>
+      <rux-menu-item value='notImplemented'>Preferences...</rux-menu-item>
+      <rux-menu-item value='notImplemented'>Sign Out...</rux-menu-item>
+    </rux-menu>
+  </rux-pop-up>
+
+  <rux-clock style="color:red"/>
+
+  <div class='global-status-bar_status-indicators' slot='right-side'></div>
 </rux-global-status-bar>
+
+<main class='dashboard-page'>
+  <aside class='dashboard-page_left-panel'>
+    <!-- <Alerts /> -->
+    <!-- <div style='background-color: pink;'></div> -->
+  </aside>
+
+  <div class="tabs-bar"></div>
+
+  <div class="dashboard-page_right-panel"></div>
+</main>
