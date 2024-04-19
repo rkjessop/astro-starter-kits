@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularLibComponent, AstroComponentsModule, RuxContainer } from '@astrouxds/angular';
 import { LaunchListComponent } from "../launch-list/launch-list.component";
+import { partition } from 'lodash';
 
 @Component({
     selector: 'app-planned-launches',
@@ -12,4 +13,8 @@ import { LaunchListComponent } from "../launch-list/launch-list.component";
 export class PlannedLaunchesComponent {
 
   plannedLaunches = [1,2,3];
+
+  constructor() {
+    console.error('##### sort = ', partition(this.plannedLaunches.sort(), (n: number) => { return n % 2; }));
+  }
 }

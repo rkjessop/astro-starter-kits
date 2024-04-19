@@ -21,8 +21,8 @@ export class AppComponent {
     console.error('##### >menuSelect:e = ', e);
     const { detail } = e;
     if (detail.value === 'notImplemented') {
-      console.error('##### b');
-      // addToast('This feature has not been implemented', false, 3000);
+      console.error('##### not yet implemented');
+      // TODO:addToast('This feature has not been implemented', false, 3000);
       return;
     }
     if (detail.value === 'themeToggle') {
