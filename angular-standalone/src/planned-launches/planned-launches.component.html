@@ -1,0 +1,64 @@
+<rux-container class='planned-launches'>
+  <div slot='header'>
+    <div class='active-alerts'>
+      <span>{{plannedLaunches.length}}</span> Planned Launches
+    </div>
+    <!-- WORKS
+    <div className='select-menu-div'>
+      <rux-select
+        value={severitySelection}
+        size='small'
+        label='Severity'
+      >
+        <rux-option label='All' value='all' />
+        <rux-option label='Critical' value='critical' />
+        <rux-option label='Caution' value='caution' />
+        <rux-option label='Serious' value='serious' />
+      </rux-select>
+
+      <rux-select
+        value={categorySelection}
+        size='small'
+        label='Category'
+      >
+        <rux-option label='All' value='all' />
+        <rux-option label='Hardware' value='hardware' />
+        <rux-option label='Software' value='software' />
+        <rux-option label='Spacecraft' value='spacecraft' />
+      </rux-select>
+    -->
+  </div>
+
+  <!--
+  <div
+    className='filter-notification'
+    hidden={severitySelection === 'all' && categorySelection === 'all'}
+  >
+    One or more filters selected.
+    <rux-button
+      onClick={handleClearFilter}
+      secondary
+      borderless
+      size='small'
+    >
+      Clear filters
+    </rux-button>
+    to display all alerts.
+  </div>
+  -->
+
+  <!-- severitySelection={{severitySelection}}
+  categorySelection={{categorySelection}} -->
+  <app-launch-list id="xxx"/>
+
+  <!-- WORKS
+  <div slot='footer'>
+    <rux-button secondary>
+      Dismiss
+    </rux-button>
+    <rux-button>
+      Acknowledge
+    </rux-button>
+  </div>
+  -->
+</rux-container>

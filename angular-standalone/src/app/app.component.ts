@@ -1,15 +1,14 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AstroComponentsModule } from '@astrouxds/angular';
+import { PlannedLaunchesComponent } from "../planned-launches/planned-launches.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, AstroComponentsModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  //schemas: [NO_ERRORS_SCHEMA /*CUSTOM_ELEMENTS_SCHEMA*/]
-  // imports: [BrowserModule, FormsModule, AstroComponentsModule],  
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    imports: [RouterOutlet, AstroComponentsModule, PlannedLaunchesComponent]
 })
 export class AppComponent {
   title = 'angular-standalone'; // TODO: unnecessary?  It is in package.json and elsewhere.

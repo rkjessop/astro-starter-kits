@@ -1,0 +1,20 @@
+/* Core Grid CSS */
+@import 'ag-grid-community/styles/ag-grid.css';
+/* Quartz Theme Specific CSS */
+@import 'ag-grid-community/styles/ag-theme-quartz.css';
+
+::ng-deep ag-grid-angular {
+  color: white
+}
+
+.ag-header-cell {
+  color: greenyellow;
+}
+
+::ng-deep .ag-paging-panel {
+  visibility: collapse;
+}
+
+#yyy {
+  color: white;
+}

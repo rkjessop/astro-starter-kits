@@ -1,0 +1,13 @@
+<div style="width: 400px; height: 500px;">
+  <!-- class="ag-theme-quartz" -->
+  <ag-grid-angular
+    id='yyy'
+    style="height: 90vh"
+    [rowData]="rowData" 
+    [defaultColDef]="defaultColDef"
+    [columnDefs]="colDefs"
+    [pagination]="false"
+    [paginationAutoPageSize]="true"
+    (gridReady)="onGridReady($event)"
+    ></ag-grid-angular>
+</div>

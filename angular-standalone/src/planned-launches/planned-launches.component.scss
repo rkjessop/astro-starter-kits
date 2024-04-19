@@ -1,0 +1,33 @@
+.planned-launches div[slot='header'] {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.active-alerts {
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: var(--font-size-base);
+}
+
+.active-alerts > span {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weights-bold);
+  margin-top: var(--spacing-4);
+}
+
+.planned-launches::part(footer) {
+  padding: 0px;
+}
+
+.planned-launches div[slot='footer'] {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  box-shadow: 0 -0.5rem 1.25rem rgba(0, 0, 0, 0.25);
+  border-top: 1px solid var(--logHeaderBackgroundColor, rgb(20, 32, 44));
+  padding: 0.75rem;
+  position: sticky;
+  bottom: 0;
+}
