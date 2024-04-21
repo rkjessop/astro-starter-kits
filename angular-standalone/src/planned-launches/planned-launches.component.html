@@ -1,7 +1,7 @@
 <rux-container class='planned-launches'>
   <div slot='header'>
     <div class='planned-launches-header'>
-      <span>{{plannedLaunches.length}}</span> Planned Launches
+      <span>{{ count$ | async }} / {{plannedLaunches.length}}</span> Planned Launches
     </div>
     <!-- WORKS
     <div className='select-menu-div'>

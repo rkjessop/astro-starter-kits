@@ -2,13 +2,21 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/co
 import { RouterOutlet } from '@angular/router';
 import { AstroComponentsModule } from '@astrouxds/angular';
 import { PlannedLaunchesComponent } from "../planned-launches/planned-launches.component";
+import { MyCounterComponent } from '../my-counter/my-counter.component';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './counter.reducer';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, AstroComponentsModule, PlannedLaunchesComponent]
+    imports: [
+      RouterOutlet
+      , AstroComponentsModule
+      , PlannedLaunchesComponent
+      , MyCounterComponent
+    ]
 })
 export class AppComponent {
   title = 'angular-standalone'; // TODO: unnecessary?  It is in package.json and elsewhere.
@@ -16,6 +24,10 @@ export class AppComponent {
   applicationAbbreviation = "NG OMW";
   applicationName = "NG Orbital Mechanics Workbench";
   version = "0.1";
+
+  constructor() {
+    console.error('!!! ##### >constructor')
+  }
 
   menuSelect(e: CustomEvent) {
     console.error('##### >menuSelect:e = ', e);

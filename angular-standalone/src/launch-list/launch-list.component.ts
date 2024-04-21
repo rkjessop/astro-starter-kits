@@ -4,6 +4,8 @@ import { AgGridAngular } from 'ag-grid-angular';
 import { HttpClient } from '@angular/common/http';
 import { ColDef, GridReadyEvent } from 'ag-grid-community';
 import { HttpClientModule } from '@angular/common/http';
+import { Store } from '@ngrx/store';
+import { set } from '../app/counter.actions';
 
 @Component({
   selector: 'app-launch-list',
@@ -56,19 +58,27 @@ export class LaunchListComponent {
     // }
   ];
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+    , private store: Store<{ count: number }>
+  ) {
+
+  }
 
   onGridReady(params: GridReadyEvent<any>) {
-    console.log('#####################################');
+    console.log('##### >onGridReady');
     this.http
       .get<
         any[]
       >("https://www.ag-grid.com/example-assets/olympic-winners.json")
       .subscribe((data) => {
         console.error('############ data = ', data);
-        this.rowData = data
+        console.error('############ data.length = ', data.length);
+        this.rowData = data;
+        this.store.dispatch(set({count: data.length}));
       });
   }  
+
   handleClick(e: any) {
     console.error('##### >handleClick');
   }
