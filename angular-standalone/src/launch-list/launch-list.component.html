@@ -1,10 +1,12 @@
+<div id='yyy'>
+<!-- [defaultColDef]="defaultColDef" -->
+  <!-- [pagination]="false" -->
+  <!-- [paginationAutoPageSize]="true" -->
 <ag-grid-angular
   id='xxx'
-  style="height: 80vh"
-  [rowData]="rowData" 
-  [defaultColDef]="defaultColDef"
+  [gridOptions]="gridOptions"
+  [rowData]="rowData | async" 
   [columnDefs]="colDefs"
-  [pagination]="false"
-  [paginationAutoPageSize]="true"
   (gridReady)="onGridReady($event)"
-  ></ag-grid-angular>
+></ag-grid-angular>
+</div>
