@@ -1,16 +1,5 @@
-#yyy {
-  // height: 200px;
-  // max-height: 200px;
-  // background-color: lawngreen;
-}
-
 #xxx {
-  // max-width: 150;
-  // height: calc(100vh - (21px + 96px + 106px + 100px));
-  // max-height: 500px;
-  // height: 50vh;
-  // max-height:80vh;
-  // overflow: scroll;
+  height: calc(100vh - (21px + 96px + 106px + 55px));
 }
 
 // ::-webkit-scrollbar {
@@ -19,23 +8,10 @@
 // }
 
 :host {
-  ::ng-deep .ag-header-cell {
-    // margin: 0 8px;
-    // padding: 0 8px;
-    // background-color: aquamarine;
-  }
-
   ::ng-deep .ag-header-cell-text {
     font-size: 20px;
     font-weight: bold;
     color: white;
     overflow: clip;
-    // padding-right: 15px;
-    // max-width: 180px;
-  }
-
-  ::ng-deep .ag-cell-value {
-    // margin: 0 8px;
-    // background-color: aquamarine;
   }
 }

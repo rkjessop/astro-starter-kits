@@ -22,6 +22,8 @@ export class LaunchListComponent implements OnInit {
   categorySelection: any;
   sortDirection: any;
 
+  usePagination = false; // TODO: only partially implemented: need paging buttons
+  
   rowData = new BehaviorSubject<any []>([]);
   // rowData$: this.rowData.asObservable();
 
@@ -72,7 +74,7 @@ export class LaunchListComponent implements OnInit {
       domLayout: 'autoHeight',
       defaultColDef: {
         sortable: false,
-        resizable: false,
+        resizable: true,
         editable: false,
         suppressMenu: true,
         suppressKeyboardEvent: (params) => { 
@@ -82,12 +84,16 @@ export class LaunchListComponent implements OnInit {
         floatingFilter: false,
         filterParams: { buttons: ['clear'] }
       },
-      rowHeight: 50,
-      paginationPageSize: 10,
+      rowHeight: 30,
       headerHeight: 40,
       animateRows: false,
-      pagination: false,
-      paginationAutoPageSize: false,
+    }
+
+    if (this.usePagination) {
+      this.gridOptions.pagination = true;
+      this.gridOptions.paginationAutoPageSize = true;
+      this.gridOptions.paginationPageSize = 10;
+
     }
   }
 
@@ -117,7 +123,7 @@ export class LaunchListComponent implements OnInit {
   }
   
   onGridReady(params: GridReadyEvent<any>) {
-    params.api.sizeColumnsToFit();
+    // params.api.sizeColumnsToFit();
     }  
 
   handleClick(e: any) {
