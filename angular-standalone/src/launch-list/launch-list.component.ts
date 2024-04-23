@@ -9,6 +9,7 @@ import { set } from '../app/counter.actions';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
+const ROW_HEIGHT = 40;
 
 @Component({
   selector: 'app-launch-list',
@@ -24,36 +25,26 @@ export class LaunchListComponent implements OnInit {
 
   usePagination = false; // TODO: only partially implemented: need paging buttons
   
-  rowData = new BehaviorSubject<any []>([]);
-  // rowData$: this.rowData.asObservable();
-
-  defaultColDef: ColDef = {
-    // editable: false,
-    // enableRowGroup: false,
-    // enablePivot: true,
-    // enableValue: true,
-    // filter: false,
-    // flex: 1,
-    // minWidth: 100,
-    // maxWidth: 250,
-    // padding: var(--spacing-0, 0rem) var(--spacing-2, 0.5rem);    
-  };
+  rowData$ = new BehaviorSubject<any []>([]);
 
   colDefs: ColDef[] = [
     { 
       headerName: 'Date',
       field: "date",
+      minWidth: 100,
       width: 100
     },
     {
       headerName: 'Launch Window',
       field: "age",
-      width: 170
-      , wrapHeaderText: true
+      minWidth: 170,
+      width: 170,
+      wrapHeaderText: true
     },
     { 
       headerName: 'Launch Site',
       field: "athlete",
+      minWidth: 190,
       width: 210
     },
     {
@@ -85,25 +76,22 @@ export class LaunchListComponent implements OnInit {
         filterParams: { buttons: ['clear'] }
       },
       rowHeight: 30,
-      headerHeight: 40,
+      headerHeight: ROW_HEIGHT,
       animateRows: false,
     }
 
     if (this.usePagination) {
       this.gridOptions.pagination = true;
       this.gridOptions.paginationAutoPageSize = true;
-      this.gridOptions.paginationPageSize = 10;
-
+      this.gridOptions.paginationPageSize = 10; // TODO: This should be set to the number of rows that is visible.
     }
   }
 
   ngOnInit() {
     this.http
-      .get<
-        any[]
-      >("https://www.ag-grid.com/example-assets/olympic-winners.json")
+      .get<any[]>("https://www.ag-grid.com/example-assets/olympic-winners.json")
       .subscribe((data) => {
-        this.rowData.next(data);
+        this.rowData$.next(data);
         this.store.dispatch(set({count: data.length}));
       });
   }

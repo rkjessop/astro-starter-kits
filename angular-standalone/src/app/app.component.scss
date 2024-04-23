@@ -2,7 +2,8 @@
 
 $classificationHeight: 20px;
 $statusBarHeight: 96px;
-$fixedHeight: 116px;
+$fixedHeight: calc($statusBarHeight + 20px);
+$slosh: 1px; // system reports fractional pixels
 
 .classification {
   text-align: center;
@@ -25,7 +26,6 @@ rux-global-status-bar {
 }
 
 .global-status-bar_status-indicators {
-  background-color: aqua;
   display: flex;
   align-items: center;
   gap: var(--spacing-4);
@@ -44,7 +44,7 @@ rux-menu-item[value='themeToggle'] span {
 .dashboard-page {
   background-color: blue;
   display: grid;
-  height: calc(100vh - $fixedHeight);
+  height: calc(100vh - ($fixedHeight + $slosh));
   padding: var(--spacing-3);
   gap: var(--spacing-2);
   grid-template-rows: 3.75rem minmax(0, 1fr);
@@ -60,7 +60,6 @@ rux-menu-item[value='themeToggle'] span {
 
 .dashboard-page_left-panel {
   grid-area: left-panel;
-  background-color: pink;
 }
 
 .tabs-bar {

@@ -17,6 +17,13 @@
   margin-top: var(--spacing-4);
 }
 
+#zzz {
+  display: flex;
+  align-items: center;
+  max-width: 55%;
+  gap: 5%;
+}
+
 .planned-launches-header::part(footer) {
   padding: 0px;
 }
