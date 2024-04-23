@@ -5,6 +5,7 @@
     </div>
 
     <div id='zzz' className='select-menu-div'>
+      <!--
       <rux-select
         value={severitySelection}
         size='small'
@@ -15,16 +16,19 @@
         <rux-option label='Caution' value='caution' />
         <rux-option label='Serious' value='serious' />
       </rux-select>
+      -->
 
       <rux-select
-        value={categorySelection}
+        value={launchSiteSelection}
         size='small'
-        label='Category'
+        label='Launch Site'
       >
+        <!-- TODO: group using SPARQL -->
         <rux-option label='All' value='all' />
-        <rux-option label='Hardware' value='hardware' />
-        <rux-option label='Software' value='software' />
-        <rux-option label='Spacecraft' value='spacecraft' />
+        <rux-option label='Chinese' value='Chinese' />
+        <rux-option label='Iranian' value='Iranian' />
+        <rux-option label='North Korean' value='North Korean' />
+        <rux-option label='Russian' value='Russian' />
       </rux-select>
     </div>
 </div>
