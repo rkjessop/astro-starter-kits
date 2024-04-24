@@ -1,15 +1,7 @@
 // see app.component.scss for these values
-$GRID_HEIGHT: calc(100vh - (20px + 96px + 116px + 47px));
+$GRID_HEIGHT: calc(100vh - (20px + 96px + 116px + 48px));
 
 #gridId {
   height: $GRID_HEIGHT;
   overflow-y: auto;
-}
-
-:host {
-  ::ng-deep .ag-header-cell-text {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-  }
 }

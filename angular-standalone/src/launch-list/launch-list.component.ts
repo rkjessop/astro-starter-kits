@@ -62,18 +62,7 @@ export class LaunchListComponent implements OnInit {
     , private store: Store<{ count: number }>
   ) {
     this.gridOptions = {
-      domLayout: 'autoHeight',
       defaultColDef: {
-        sortable: false,
-        resizable: true,
-        editable: false,
-        suppressMenu: true,
-        suppressKeyboardEvent: (params) => { 
-          return this.suppressEnter(params) || this.suppressNavigation(params);
-        },
-        filter: false,
-        floatingFilter: false,
-        filterParams: { buttons: ['clear'] }
       },
       rowHeight: 30,
       headerHeight: ROW_HEIGHT,
