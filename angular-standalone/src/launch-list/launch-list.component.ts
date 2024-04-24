@@ -8,6 +8,7 @@ import { Store } from '@ngrx/store';
 import { set } from '../app/counter.actions';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 
 const ROW_HEIGHT = 40;
 
@@ -61,6 +62,8 @@ export class LaunchListComponent implements OnInit {
   constructor(
     private http: HttpClient
     , private store: Store<{ count: number }>
+    , private route: ActivatedRoute
+    , private router: Router
   ) {
     this.gridOptions = {
       defaultColDef: {
@@ -105,7 +108,8 @@ export class LaunchListComponent implements OnInit {
     // params.api.sizeColumnsToFit();
     }  
 
-  handleClick(e: any) {
-    console.error('##### >handleClick');
+  onRowClicked(e: any) {
+    console.error('##### >onRowClicked:e = ', e);
+    this.router.navigate(['/app-launch-details', {}]);
   }
 }

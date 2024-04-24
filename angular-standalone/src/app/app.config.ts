@@ -1,5 +1,5 @@
 import { ApplicationConfig, isDevMode } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideStore, StoreModule } from '@ngrx/store';
@@ -8,7 +8,7 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes)
+    provideRouter(routes, withComponentInputBinding())
     , provideStore({count: counterReducer})
     , provideStoreDevtools({
       maxAge: 25, // Retains last 25 states

@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
 import { AstroComponentsModule } from '@astrouxds/angular';
 import { PlannedLaunchesComponent } from "../planned-launches/planned-launches.component";
 import { MyCounterComponent } from '../my-counter/my-counter.component';
@@ -12,7 +12,10 @@ import { counterReducer } from './counter.reducer';
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     imports: [
-      RouterOutlet
+      RouterLink
+      , RouterLinkActive
+      , RouterOutlet
+      , RouterModule//.forRoot(APP_ROUTES)
       , AstroComponentsModule
       , PlannedLaunchesComponent
       , MyCounterComponent

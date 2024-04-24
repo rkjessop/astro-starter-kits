@@ -5,13 +5,19 @@ import { partition } from 'lodash';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-planned-launches',
     standalone: true,
     templateUrl: './planned-launches.component.html',
     styleUrl: './planned-launches.component.scss',
-    imports: [AstroComponentsModule, CommonModule, LaunchListComponent]
+    imports: [
+      AstroComponentsModule
+      , CommonModule
+      , LaunchListComponent
+      , RouterOutlet
+    ]
 })
 export class PlannedLaunchesComponent {
 
