@@ -1,7 +1,7 @@
 // see app.component.scss for these values
 $GRID_HEIGHT: calc(100vh - (20px + 96px + 116px + 47px));
 
-#xxx {
+#gridId {
   height: $GRID_HEIGHT;
   overflow-y: auto;
 }

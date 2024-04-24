@@ -111,6 +111,7 @@ export class LaunchListComponent implements OnInit {
   }
   
   onGridReady(params: GridReadyEvent<any>) {
+    console.log('##### params = ', params);
     // params.api.sizeColumnsToFit();
     }  
 
