@@ -23,6 +23,7 @@ export class LaunchListComponent implements OnInit {
   categorySelection: any;
   sortDirection: any;
 
+  themeClass: string ="ag-theme-quartz-dark";
   usePagination = false; // TODO: only partially implemented: need paging buttons
   
   rowData$ = new BehaviorSubject<any []>([]);
@@ -31,8 +32,8 @@ export class LaunchListComponent implements OnInit {
     { 
       headerName: 'Date',
       field: "date",
-      minWidth: 100,
-      width: 100
+      minWidth: 120,
+      width: 120
     },
     {
       headerName: 'Launch Window',
@@ -64,7 +65,7 @@ export class LaunchListComponent implements OnInit {
     this.gridOptions = {
       defaultColDef: {
       },
-      rowHeight: 30,
+      rowHeight: ROW_HEIGHT,
       headerHeight: ROW_HEIGHT,
       animateRows: false,
     }

@@ -1,7 +1,8 @@
-  <ag-grid-angular
-  [gridOptions]="gridOptions"
+<ag-grid-angular
   id='gridId'
+  [gridOptions]="gridOptions"
   [rowData]="rowData$ | async" 
   [columnDefs]="colDefs"
+  [class]="themeClass"
   (gridReady)="onGridReady($event)"
 ></ag-grid-angular>
