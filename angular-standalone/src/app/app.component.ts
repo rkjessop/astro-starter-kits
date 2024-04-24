@@ -15,7 +15,7 @@ import { counterReducer } from './counter.reducer';
       RouterLink
       , RouterLinkActive
       , RouterOutlet
-      , RouterModule//.forRoot(APP_ROUTES)
+      , RouterModule
       , AstroComponentsModule
       , PlannedLaunchesComponent
       , MyCounterComponent

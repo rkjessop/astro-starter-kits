@@ -1,8 +1,6 @@
 <div class="classification">{{systemClassification}}</div>
 
-<router-outlet/>
-
-<!-- hover:app-name="{{applicationName}} v{{version}}" -->
+  <!-- hover:app-name="{{applicationName}} v{{version}}" -->
 <rux-global-status-bar 
   app-domain="NG"
   app-name="Orbital Mechanics Workbench"
@@ -11,6 +9,7 @@
   version="0.1"
   menu-icon="apps"
   >
+
   <rux-pop-up
     id="popup-menu"
     slot='left-side'
@@ -41,14 +40,19 @@
   <div class='global-status-bar_status-indicators' slot='right-side'></div>
 </rux-global-status-bar>
 
-<main class='dashboard-page'>
-  <aside class='dashboard-page_left-panel'>
-    <app-planned-launches/>
-  </aside>
+<nav>
+  <a class="button"
+     routerLink="/app-workbench-dashboard"
+     routerLinkActive="activebutton"
+     ariaCurrentWhenActive="page">
+    Workbench Dashboard
+  </a> |
+  <a class="button"
+     routerLink="/app-launch-details"
+     routerLinkActive="activebutton"
+     ariaCurrentWhenActive="page">
+    Launch Details
+  </a>
+</nav>
 
-  <div class="tabs-bar"></div>
-
-  <div class="dashboard-page_right-panel">
-    <app-my-counter></app-my-counter>    
-  </div>
-</main>
+<router-outlet/>
