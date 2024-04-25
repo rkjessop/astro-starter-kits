@@ -21,14 +21,11 @@ import { RouterOutlet } from '@angular/router';
 })
 export class PlannedLaunchesComponent {
 
-  plannedLaunches = [1,2,3];
-
   count$: Observable<number>;
 
   constructor(
     private store: Store<{ count: number }>
   ) {
-    console.error('##### sort = ', partition(this.plannedLaunches.sort(), (n: number) => { return n % 2; }));
 
     this.count$ = store.select('count');
   }

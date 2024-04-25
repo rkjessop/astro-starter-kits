@@ -16,7 +16,6 @@ rux-menu-item[value='themeToggle'] span {
 }
 
 .dashboard-page {
-  background-color: blue;
   display: grid;
   height: calc(100vh - ($fixedHeight + $slosh));
   padding: var(--spacing-3);

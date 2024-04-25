@@ -19,6 +19,7 @@ import { counterReducer } from './counter.reducer';
       , AstroComponentsModule
       , PlannedLaunchesComponent
       , MyCounterComponent
+      // , BreadcrumbNav
     ]
 })
 export class AppComponent {
@@ -29,7 +30,6 @@ export class AppComponent {
   version = "0.1";
 
   constructor() {
-    console.error('!!! ##### >constructor')
   }
 
   menuSelect(e: CustomEvent) {
@@ -46,5 +46,9 @@ export class AppComponent {
       // document.body.classList.toggle('light-theme');
       return;
     }
-  }  
+  }
+
+  onClick() {
+    console.error('##### >onClick');
+  }
 }

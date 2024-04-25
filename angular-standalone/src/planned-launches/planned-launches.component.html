@@ -1,10 +1,10 @@
 <rux-container class='planned-launches'>
   <div slot='header'>
     <div class='planned-launches-header'>
-      <span>{{ count$ | async }} / {{plannedLaunches.length}}</span> Planned Launches
+      <span>{{ count$ | async }}</span> Planned Launches
     </div>
 
-    <div id='launchFilters' className='select-menu-div'>
+    <div id='launchFilters' class='select-menu-div'>
       <!--
       <rux-select
         value={severitySelection}
@@ -35,7 +35,7 @@
 
   <!--
   <div
-    className='filter-notification'
+    class='filter-notification'
     hidden={severitySelection === 'all' && categorySelection === 'all'}
   >
     One or more filters selected.
