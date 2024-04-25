@@ -31,7 +31,7 @@ rux-menu-item[value='themeToggle'] span {
   padding: 0;
 }
 
-.dashboard-page_left-panel {
+.dashboard-page__left-panel {
   grid-area: left-panel;
 }
 
@@ -40,7 +40,7 @@ rux-menu-item[value='themeToggle'] span {
   background-color: lawngreen;
 }
 
-.dashboard-page_right-panel {
+.dashboard-page__right-panel {
   grid-area: right-panel;
   background-color: coral;
 }

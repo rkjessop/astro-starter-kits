@@ -1,0 +1,32 @@
+<div class='breadcrumb-search-wrapper'>
+  <rux-breadcrumb class='breadcrumb-nav'>
+    <rux-breadcrumb-item
+      key="{'Dashboard'}"
+      (click)="onClick($event)"
+    >
+      Dashboard
+    </rux-breadcrumb-item>
+
+    <rux-breadcrumb-item
+      key="{'Launch Details'}"
+      (click)="onClick($event)"
+    >
+      Launch Details
+    </rux-breadcrumb-item>
+
+    <rux-breadcrumb-item>
+      Launch Details Dialog
+    </rux-breadcrumb-item>
+
+    <!-- {filteredMatches.map((match, index) => {
+      return (
+        <rux-breadcrumb-item
+          key={index}
+          onClick={() => navigate(match.pathname)}
+        >
+          {getLastPath(match.pathname)}
+        </rux-breadcrumb-item>
+      );
+    })} -->
+  </rux-breadcrumb>
+</div>

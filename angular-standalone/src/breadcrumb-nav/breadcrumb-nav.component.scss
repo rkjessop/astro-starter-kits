@@ -1,0 +1,32 @@
+.breadcrumb-search-wrapper {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.breadcrumb-nav::part(container) {
+  padding: var(--spacing-6);
+}
+
+rux-breadcrumb-item {
+  color: var(--color-text-interactive-default);
+  cursor: pointer;
+}
+
+rux-breadcrumb-item:last-of-type {
+  color: var(--color-text-primary);
+}
+
+rux-breadcrumb-item:last-of-type:hover {
+  color: var(--color-text-primary);
+}
+
+rux-breadcrumb-item:hover {
+  color: var(--color-text-interactive-hover);
+}
+
+.breadcrumb-search-wrapper rux-input {
+  margin-block: auto;
+  margin-right: var(--spacing-6);
+}

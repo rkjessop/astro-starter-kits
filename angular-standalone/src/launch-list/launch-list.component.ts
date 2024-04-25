@@ -2,7 +2,7 @@ import { AngularLibComponent, AstroComponentsModule, RuxContainer } from '@astro
 import { Component, OnInit } from '@angular/core';
 import { AgGridAngular, AgGridModule } from 'ag-grid-angular';
 import { HttpClient } from '@angular/common/http';
-import { ColDef, GridOptions, GridReadyEvent, SuppressKeyboardEventParams } from 'ag-grid-community';
+import { ColDef, GridOptions, GridReadyEvent, RowClickedEvent, SuppressKeyboardEventParams } from 'ag-grid-community';
 import { HttpClientModule } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { set } from '../app/counter.actions';
@@ -104,12 +104,11 @@ export class LaunchListComponent implements OnInit {
   }
   
   onGridReady(params: GridReadyEvent<any>) {
-    console.log('##### params = ', params);
     // params.api.sizeColumnsToFit();
-    }  
+  }  
 
-  onRowClicked(e: any) {
-    console.error('##### >onRowClicked:e = ', e);
-    this.router.navigate(['/app-launch-details', {}]);
+  onRowClicked(event: RowClickedEvent) {
+    console.error('##### >onRowClicked:e = ', event);
+    this.router.navigate(['/app-launch-details', {data: event.data}]);
   }
 }

@@ -5,6 +5,7 @@ import { PlannedLaunchesComponent } from "../planned-launches/planned-launches.c
 import { MyCounterComponent } from '../my-counter/my-counter.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './counter.reducer';
+import { BreadcrumbNavComponent } from '../breadcrumb-nav/breadcrumb-nav.component';
 
 @Component({
     selector: 'app-root',
@@ -19,7 +20,7 @@ import { counterReducer } from './counter.reducer';
       , AstroComponentsModule
       , PlannedLaunchesComponent
       , MyCounterComponent
-      // , BreadcrumbNav
+      , BreadcrumbNavComponent
     ]
 })
 export class AppComponent {
@@ -46,9 +47,5 @@ export class AppComponent {
       // document.body.classList.toggle('light-theme');
       return;
     }
-  }
-
-  onClick() {
-    console.error('##### >onClick');
   }
 }

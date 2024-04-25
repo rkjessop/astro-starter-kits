@@ -26,7 +26,6 @@ export class PlannedLaunchesComponent {
   constructor(
     private store: Store<{ count: number }>
   ) {
-
     this.count$ = store.select('count');
   }
 }

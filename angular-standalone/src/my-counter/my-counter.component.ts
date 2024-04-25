@@ -19,11 +19,10 @@ export class MyCounterComponent {
     private store: Store<{ count: number }>
   ) {
     this.count$ = store.select('count');
-    this.count$.subscribe((x) => {console.error('>>>>> x = ', x)});
+    // this.count$.subscribe((x) => {console.error('>>>>> x = ', x)});
   }
 
   increment() {
-    console.error('##### >increment');
     this.store.dispatch(increment());
   }
 
