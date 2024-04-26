@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { AstroComponentsModule } from '@astrouxds/angular';
 import { LaunchListComponent } from '../launch-list/launch-list.component';
 
+const selectorName = 'app-launch-details';
+
 @Component({
-  selector: 'app-launch-details',
+  selector: selectorName,
   standalone: true,
   imports: [
     AstroComponentsModule
@@ -18,4 +20,13 @@ import { LaunchListComponent } from '../launch-list/launch-list.component';
 })
 export class LaunchDetailsComponent {
 
+  static selectorName = selectorName;
+
+  state: any;
+
+  constructor(
+    private router: Router
+  ) {
+    this.state = this.router.getCurrentNavigation()?.extras.state;
+  }
 }

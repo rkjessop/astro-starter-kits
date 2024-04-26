@@ -3,7 +3,7 @@ import { LaunchDetailsComponent } from '../launch-details/launch-details.compone
 import { WorkbenchDashboardComponent } from '../workbench-dashboard/workbench-dashboard.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo:'app-workbench-dashboard', pathMatch: 'full'} // redirect to the home page
-  , { path: 'app-workbench-dashboard', component: WorkbenchDashboardComponent}
-  , { path: 'app-launch-details', component: LaunchDetailsComponent}
+  { path: '', redirectTo: WorkbenchDashboardComponent.selectorName, pathMatch: 'full'} // redirect to the home page
+  , { path: WorkbenchDashboardComponent.selectorName, component: WorkbenchDashboardComponent}
+  , { path: LaunchDetailsComponent.selectorName, component: LaunchDetailsComponent}
 ];

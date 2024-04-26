@@ -1,32 +1,10 @@
-<div class='breadcrumb-search-wrapper'>
+<nav class='breadcrumb-search-wrapper'>
   <rux-breadcrumb class='breadcrumb-nav'>
-    <rux-breadcrumb-item
-      key="{'Dashboard'}"
+      <!-- slot="{{item}}" -->
+      <rux-breadcrumb-item *ngFor="let item of (items$ | async);"
       (click)="onClick($event)"
-    >
-      Dashboard
+      >
+      {{item}}
     </rux-breadcrumb-item>
-
-    <rux-breadcrumb-item
-      key="{'Launch Details'}"
-      (click)="onClick($event)"
-    >
-      Launch Details
-    </rux-breadcrumb-item>
-
-    <rux-breadcrumb-item>
-      Launch Details Dialog
-    </rux-breadcrumb-item>
-
-    <!-- {filteredMatches.map((match, index) => {
-      return (
-        <rux-breadcrumb-item
-          key={index}
-          onClick={() => navigate(match.pathname)}
-        >
-          {getLastPath(match.pathname)}
-        </rux-breadcrumb-item>
-      );
-    })} -->
   </rux-breadcrumb>
-</div>
+</nav>

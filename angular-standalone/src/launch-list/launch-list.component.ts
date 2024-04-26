@@ -8,7 +8,8 @@ import { Store } from '@ngrx/store';
 import { set } from '../app/counter.actions';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { LaunchDetailsComponent } from '../launch-details/launch-details.component';
 
 const ROW_HEIGHT = 40;
 
@@ -108,7 +109,7 @@ export class LaunchListComponent implements OnInit {
   }  
 
   onRowClicked(event: RowClickedEvent) {
-    console.error('##### >onRowClicked:e = ', event);
-    this.router.navigate(['/app-launch-details', {data: event.data}]);
+    console.error('##### >onRowClicked:event = ', event);
+    this.router.navigate(['/' + LaunchDetailsComponent.selectorName], {state: event.data});
   }
 }

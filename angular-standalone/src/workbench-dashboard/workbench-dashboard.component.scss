@@ -1,9 +1,5 @@
 @use "sass:math" as math;
-
-$classificationHeight: 20px;
-$statusBarHeight: 96px;
-$fixedHeight: calc($statusBarHeight + 20px);
-$slosh: 1px; // system reports fractional pixels
+@use '../base' as base;
 
 #popup-menu {
   height: calc(var(--spacing-14) + var(--spacing-050));
@@ -17,7 +13,7 @@ rux-menu-item[value='themeToggle'] span {
 
 .dashboard-page {
   display: grid;
-  height: calc(100vh - ($fixedHeight + $slosh));
+  height: calc(100vh - (base.$fixedHeight + base.$slosh));
   padding: var(--spacing-3);
   gap: var(--spacing-2);
   grid-template-rows: 3.75rem minmax(0, 1fr);

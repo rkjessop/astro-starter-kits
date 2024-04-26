@@ -6,6 +6,7 @@ import { MyCounterComponent } from '../my-counter/my-counter.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './counter.reducer';
 import { BreadcrumbNavComponent } from '../breadcrumb-nav/breadcrumb-nav.component';
+import { RuxBreadcrumbItem } from '@astrouxds/angular';
 
 @Component({
     selector: 'app-root',

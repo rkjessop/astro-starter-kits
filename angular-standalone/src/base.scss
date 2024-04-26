@@ -1,14 +1,8 @@
-// see app.component.scss for these values
+@use "sass:math" as math;
+
 $classificationHeight: 20px;
 $statusBarHeight: 96px;
 $breadcrumbHeight: 68px;
 $navBarHeight: 22px;
 $fixedHeight: calc($classificationHeight + $statusBarHeight + $breadcrumbHeight + $navBarHeight);
 $slosh: 1px; // system reports fractional pixels
-
-$GRID_HEIGHT: calc(100vh - ($fixedHeight + 116px + 48px));
-
-#gridId {
-  height: $GRID_HEIGHT;
-  overflow-y: auto;
-}
