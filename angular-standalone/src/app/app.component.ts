@@ -1,11 +1,11 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
 import { AstroComponentsModule } from '@astrouxds/angular';
-import { PlannedLaunchesComponent } from "../planned-launches/planned-launches.component";
-import { MyCounterComponent } from '../my-counter/my-counter.component';
+import { PlannedLaunchesComponent } from "../components/planned-launches/planned-launches.component";
+import { MyCounterComponent } from '../components/my-counter/my-counter.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './counter.reducer';
-import { BreadcrumbNavComponent } from '../breadcrumb-nav/breadcrumb-nav.component';
+import { BreadcrumbNavComponent } from '../components/breadcrumb-nav/breadcrumb-nav.component';
 import { RuxBreadcrumbItem } from '@astrouxds/angular';
 
 @Component({

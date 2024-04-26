@@ -1,5 +1,5 @@
 @use "sass:math" as math;
-@use '../base' as base;
+@use '../../constants/base' as base;
 
 #popup-menu {
   height: calc(var(--spacing-14) + var(--spacing-050));
