@@ -7,6 +7,11 @@ import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './counter.reducer';
 import { BreadcrumbNavComponent } from '../components/breadcrumb-nav/breadcrumb-nav.component';
 import { RuxBreadcrumbItem } from '@astrouxds/angular';
+import { BreadcrumbFactoryService, NgServeNavigationModule } from '@ngserveio/navigation';
+import { BreadcrumbLabelService } from '../services/breadcrumb-label.service';
+
+export const NG_SERVE_DEFAULT_LABEL_SERVICE = 'NG_SERVE_DEFAULT_LABEL_SERVICE';
+export const BREADCRUMB_LABEL_SERVICE = 'BREADCRUMB_LABEL_SERVICE';
 
 @Component({
     selector: 'app-root',
@@ -22,16 +27,25 @@ import { RuxBreadcrumbItem } from '@astrouxds/angular';
       , PlannedLaunchesComponent
       , MyCounterComponent
       , BreadcrumbNavComponent
+      , NgServeNavigationModule
+    ]
+    , schemas: [NO_ERRORS_SCHEMA]
+    , providers: [
     ]
 })
 export class AppComponent {
   title = 'angular-standalone'; // TODO: unnecessary?  It is in package.json and elsewhere.
   systemClassification = "UNCLASSIFIED";
-  applicationAbbreviation = "NG OMW";
-  applicationName = "NG Orbital Mechanics Workbench";
+  applicationAbbreviation = "NG SOW";
+  applicationName = "NG Space Operations Workbench";
   version = "0.1";
 
-  constructor() {
+  constructor(
+    factory: BreadcrumbFactoryService
+  ) {
+    console.error('- !!! ########## factory  =', factory);
+    factory.registerLabelService(BREADCRUMB_LABEL_SERVICE, BreadcrumbLabelService)
+    console.error('+ !!! ########## factory  =', factory);
   }
 
   menuSelect(e: CustomEvent) {

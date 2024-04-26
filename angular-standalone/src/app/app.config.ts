@@ -8,8 +8,8 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withComponentInputBinding())
-    , provideStore({count: counterReducer})
+    provideRouter(routes, withComponentInputBinding()) // TODO: Review withComponentInputBinding
+    , provideStore({count: counterReducer}) // NgRx example store
     , provideStoreDevtools({
       maxAge: 25, // Retains last 25 states
       logOnly: !isDevMode(), // Restrict extension to log-only mode
