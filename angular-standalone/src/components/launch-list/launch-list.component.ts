@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { ColDef, GridOptions, GridReadyEvent, RowClickedEvent, SuppressKeyboardEventParams } from 'ag-grid-community';
 import { HttpClientModule } from '@angular/common/http';
 import { Store } from '@ngrx/store';
-import { set } from '../../app/counter.actions';
+import { set } from '../app/counter.actions';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
