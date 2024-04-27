@@ -37,27 +37,6 @@ rux-menu-item[value='themeToggle'] span {
   align-items: center;
 }
 
-.dashboard-page {
-  background-color: blue;
-  display: grid;
-  height: calc(100vh - (base.$fixedHeight + base.$slosh));
-  padding: var(--spacing-3);
-  gap: var(--spacing-2);
-  grid-template-rows: 3.75rem minmax(0, 1fr);
-  grid-template-areas:
-    'left-panel tabs-bar'
-    'left-panel right-panel'
-    'left-panel right-panel';
-}
-
-.dashboard-page rux-container::part(body) {
-  padding: 0;
-}
-
-.dashboard-page_left-panel {
-  grid-area: left-panel;
-}
-
 .tabs-bar {
   grid-area: tabs-bar;
   background-color: lawngreen;

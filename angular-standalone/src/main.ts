@@ -1,4 +1,4 @@
-// import 'zone.js'; // Only needed for Stackblitz. Can remove.
+// import 'zone.js'; // TODO: review zone.js.  Only needed for Stackblitz. Can remove.
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './components/app/app.config';
 import { AppComponent } from './components/app/app.component';

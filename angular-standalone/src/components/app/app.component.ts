@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
 import { AstroComponentsModule } from '@astrouxds/angular';
 import { PlannedLaunchesComponent } from "../planned-launches/planned-launches.component";
 import { MyCounterComponent } from '../my-counter/my-counter.component';
@@ -41,11 +41,11 @@ export class AppComponent {
   version = "0.1";
 
   constructor(
-    factory: BreadcrumbFactoryService
+    private router: Router
+    , private factory: BreadcrumbFactoryService
   ) {
-    console.error('- !!! ########## factory  =', factory);
+    // console.error('##### router = ', router);
     factory.registerLabelService(BREADCRUMB_LABEL_SERVICE, BreadcrumbLabelService)
-    console.error('+ !!! ########## factory  =', factory);
   }
 
   menuSelect(e: CustomEvent) {
@@ -53,11 +53,11 @@ export class AppComponent {
     const { detail } = e;
     if (detail.value === 'notImplemented') {
       console.error('##### not yet implemented');
-      // TODO:addToast('This feature has not been implemented', false, 3000);
+      // TODO: addToast('This feature has not been implemented', false, 3000);
       return;
     }
     if (detail.value === 'themeToggle') {
-      console.error('##### a');
+      console.error('##### detail.value = ', detail.value);
       // setLightTheme(!lightTheme);
       // document.body.classList.toggle('light-theme');
       return;
