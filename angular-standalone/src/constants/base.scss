@@ -1,8 +1,8 @@
 @use "sass:math" as math;
 
-$classificationHeight: 20px;
+$classificationHeight: 21px;
 $statusBarHeight: 96px;
 $breadcrumbHeight: 68px;
-$navBarHeight: 22px;
+$navBarHeight: 0px;//22px; // used only during prototyping development
 $fixedHeight: calc($classificationHeight + $statusBarHeight + $breadcrumbHeight + $navBarHeight);
 $slosh: 1px; // system reports fractional pixels

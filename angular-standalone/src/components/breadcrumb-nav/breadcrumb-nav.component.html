@@ -1,10 +1,9 @@
-<nav class='breadcrumb-search-wrapper'>
+<nav class='breadcrumb-nav-bar'>
   <rux-breadcrumb class='breadcrumb-nav'>
-      <!-- slot="{{item}}" -->
-      <rux-breadcrumb-item *ngFor="let item of (items$ | async);"
-      (click)="onClick($event)"
-      >
-      {{item}}
+    <!-- do not define href property if the last item -->
+    <rux-breadcrumb-item *ngFor="let item of (items$ | async); let isLast = last"
+      [href]="isLast ? null : item.path"
+    >{{item.label}}
     </rux-breadcrumb-item>
   </rux-breadcrumb>
 </nav>

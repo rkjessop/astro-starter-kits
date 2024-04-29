@@ -15,6 +15,7 @@ rux-menu-item[value='themeToggle'] span {
   display: grid;
   height: calc(100vh - (base.$fixedHeight + base.$slosh));
   padding: var(--spacing-3);
+  padding-top: 0px;
   gap: var(--spacing-2);
   grid-template-rows: 3.75rem minmax(0, 1fr);
   grid-template-areas:

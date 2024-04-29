@@ -9,6 +9,7 @@ import { BreadcrumbNavComponent } from '../breadcrumb-nav/breadcrumb-nav.compone
 import { RuxBreadcrumbItem } from '@astrouxds/angular';
 import { BreadcrumbFactoryService, NgServeNavigationModule } from '@ngserveio/navigation';
 import { BreadcrumbLabelService } from '../../services/breadcrumb-label.service';
+import { routes } from './app.routes';
 
 export const NG_SERVE_DEFAULT_LABEL_SERVICE = 'NG_SERVE_DEFAULT_LABEL_SERVICE';
 export const BREADCRUMB_LABEL_SERVICE = 'BREADCRUMB_LABEL_SERVICE';
@@ -42,12 +43,16 @@ export class AppComponent {
 
   constructor(
     private router: Router
-    , private factory: BreadcrumbFactoryService
   ) {
-    // console.error('##### router = ', router);
-    factory.registerLabelService(BREADCRUMB_LABEL_SERVICE, BreadcrumbLabelService)
+    RouterModule.forRoot(routes);
   }
 
+  /**
+   * is the event handler for the popup menu attached to the applications icon on
+   * the left-hand side of the global status bar.
+   * @param e
+   * @returns 
+   */
   menuSelect(e: CustomEvent) {
     console.error('##### >menuSelect:e = ', e);
     const { detail } = e;

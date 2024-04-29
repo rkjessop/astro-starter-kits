@@ -1,12 +1,6 @@
-// see app.component.scss for these values
-$classificationHeight: 20px;
-$statusBarHeight: 96px;
-$breadcrumbHeight: 68px;
-$navBarHeight: 22px;
-$fixedHeight: calc($classificationHeight + $statusBarHeight + $breadcrumbHeight + $navBarHeight);
-$slosh: 1px; // system reports fractional pixels
+@use '../../constants/base' as base;
 
-$GRID_HEIGHT: calc(100vh - ($fixedHeight + 116px + 48px));
+$GRID_HEIGHT: calc(100vh - (base.$fixedHeight + 116px + 36px)); // TODO: what do the naked constans account for?
 
 #gridId {
   height: $GRID_HEIGHT;

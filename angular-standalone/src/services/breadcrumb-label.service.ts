@@ -22,13 +22,13 @@ export class BreadcrumbLabelService implements IBreadCrumbLabelService {
 
   getCrumb(route: ActivatedRouteSnapshot): IBreadcrumb {
     const r: ActivatedRouteSnapshot = cloneDeep(route);
-    console.error('!!! ##### r = ', r);
-    console.error('!!! ##### r.params = ', r.params);
-    console.error('!!! ##### r.pathFromRoot = ', r.pathFromRoot.toString());
+    // console.error('!!! ##### r = ', r);
+    // console.error('!!! ##### r.params = ', r.params);
+    // console.error('!!! ##### r.pathFromRoot = ', r.pathFromRoot.toString());
     // console.error('!!! ##### route = ', route);
-    console.error('!!! ##### route.params = ', route.params); // https://youtu.be/iPDJJpkZodA?si=o3sUFQrpJjW3PGE9
-    console.error('!!! ##### path = ', getBreadcrumbPath(route));
-    const sub = new BehaviorSubject<string>('asdf');
+    // console.error('!!! ##### route.params = ', route.params); // https://youtu.be/iPDJJpkZodA?si=o3sUFQrpJjW3PGE9
+    // console.error('!!! ##### path = ', getBreadcrumbPath(route));
+    const sub = new BehaviorSubject<string>('/app-workbench-dashboard');
     return {
       path: getBreadcrumbPath(route),
       label: sub.asObservable()

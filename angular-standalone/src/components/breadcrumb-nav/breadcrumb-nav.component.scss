@@ -1,4 +1,4 @@
-.breadcrumb-search-wrapper {
+.breadcrumb-nav-bar {
   display: inline-flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -14,7 +14,7 @@ rux-breadcrumb-item {
   cursor: pointer;
 }
 
-rux-breadcrumb-item:last-of-type {
+::ng-deep rux-breadcrumb-item:last-of-type {
   color: var(--color-text-primary);
 }
 
@@ -26,7 +26,7 @@ rux-breadcrumb-item:hover {
   color: var(--color-text-interactive-hover);
 }
 
-.breadcrumb-search-wrapper rux-input {
+.breadcrumb-nav-bar rux-input {
   margin-block: auto;
   margin-right: var(--spacing-6);
 }
