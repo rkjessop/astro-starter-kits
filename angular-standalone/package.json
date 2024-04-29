@@ -26,8 +26,6 @@
     "@ngrx/entity": "^17.2.0",
     "@ngrx/store": "^17.2.0",
     "@ngrx/store-devtools": "^17.2.0",
-    "@ngserveio/navigation": "^8.0.0",
-    "@ngserveio/utilities": "^8.0.0",
     "ag-charts-angular": "^9.2.0",
     "ag-grid-angular": "^31.2.1",
     "ag-grid-community": "^31.2.1",

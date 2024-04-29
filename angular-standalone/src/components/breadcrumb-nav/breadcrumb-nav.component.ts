@@ -5,9 +5,7 @@ import { ActivatedRoute, EventType, NavigationEnd, Router } from '@angular/route
 import { AstroComponentsModule, RuxIcon } from '@astrouxds/angular';
 import { RuxBreadcrumbItem } from '@astrouxds/angular';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { BreadcrumbFactoryService, IBreadcrumb as IBC, IBreadCrumbLabelService, NgServeNavigationModule } from '@ngserveio/navigation';
 import { Subject } from 'rxjs';
-import { BreadcrumbLabelService } from '../../services/breadcrumb-label.service';
 import { BREADCRUMB_LABEL_SERVICE } from '../app/app.component';
 
 interface IBreadcrumb {
@@ -25,7 +23,6 @@ interface IBreadcrumb {
    , BreadcrumbNavComponent
    , CommonModule
    , ReactiveFormsModule
-   , NgServeNavigationModule
   ],
   templateUrl: './breadcrumb-nav.component.html',
   styleUrl: './breadcrumb-nav.component.scss'
@@ -33,17 +30,14 @@ interface IBreadcrumb {
 export class BreadcrumbNavComponent {
 
   items$ = new Subject<IBreadcrumb[]>;
-  breadcrumbLabelService: IBreadCrumbLabelService;
 
   constructor(
-    private factory: BreadcrumbFactoryService
-    , private router: Router
+    private router: Router
     , private route: ActivatedRoute
   ) {
 
     // initialize state
     {
-      this.breadcrumbLabelService = factory.getBreadcrumbLabelService(BREADCRUMB_LABEL_SERVICE);
     }
 
     // initialize router
