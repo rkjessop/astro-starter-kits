@@ -1,7 +1,7 @@
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
   <div class="xxx">
     <rux-input *ngFor="let field of fields"
-      [ngModel]="state[field.field]" 
+      [(ngModel)]="state[field.field]" 
       [name]=field.field
       [required]=field.required 
       [readonly]="readonly" 
@@ -14,7 +14,7 @@
   </div>
 
   <!-- developmental code: remove when no longer needed -->
-  <div class="yyy" *ngIf="false">
+  <div class="yyy">
     <input type="submit" [disabled]="!f.valid"/>
   </div>  
 </form>

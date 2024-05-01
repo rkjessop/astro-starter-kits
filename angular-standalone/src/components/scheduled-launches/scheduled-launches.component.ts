@@ -8,10 +8,10 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-    selector: 'app-planned-launches',
+    selector: 'app-scheduled-launches',
     standalone: true,
-    templateUrl: './planned-launches.component.html',
-    styleUrl: './planned-launches.component.scss',
+    templateUrl: './scheduled-launches.component.html',
+    styleUrl: './scheduled-launches.component.scss',
     imports: [
       AstroComponentsModule
       , CommonModule
@@ -19,7 +19,7 @@ import { RouterOutlet } from '@angular/router';
       , RouterOutlet
     ]
 })
-export class PlannedLaunchesComponent {
+export class ScheduledLaunchesComponent {
 
   count$: Observable<number>;
 

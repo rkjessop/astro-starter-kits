@@ -1,7 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
 import { AstroComponentsModule } from '@astrouxds/angular';
-import { PlannedLaunchesComponent } from "../planned-launches/planned-launches.component";
+import { ScheduledLaunchesComponent } from "../scheduled-launches/scheduled-launches.component";
 import { MyCounterComponent } from '../my-counter/my-counter.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './counter.reducer';
@@ -23,7 +23,7 @@ export const BREADCRUMB_LABEL_SERVICE = 'BREADCRUMB_LABEL_SERVICE';
       , RouterOutlet
       , RouterModule
       , AstroComponentsModule
-      , PlannedLaunchesComponent
+      , ScheduledLaunchesComponent
       , MyCounterComponent
       , BreadcrumbNavComponent
     ]
