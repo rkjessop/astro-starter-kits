@@ -1,5 +1,20 @@
-<p>age = {{state.age}}</p>
-<p>athlete = {{state.athlete}}</p>
-<p># bronze = {{state.bronze}}</p>
-<p>country = {{state.country}}</p>
-<p>date = {{state.date}}</p>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="xxx">
+    <rux-input *ngFor="let field of fields"
+      [ngModel]="state[field.field]" 
+      [name]=field.field
+      [required]=field.required 
+      [readonly]="readonly" 
+      [disabled]="readonly"
+      id="left-example" 
+      label="{{field.label}}" 
+      size="medium"
+      type=field.type 
+    ></rux-input>
+  </div>
+
+  <!-- developmental code: remove when no longer needed -->
+  <div class="yyy" *ngIf="false">
+    <input type="submit" [disabled]="!f.valid"/>
+  </div>  
+</form>

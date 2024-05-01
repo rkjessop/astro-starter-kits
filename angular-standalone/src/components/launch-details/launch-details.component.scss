@@ -1,0 +1,42 @@
+$label-width: 200px;
+$input-width: 150px;
+$total-width: calc($label-width + $input-width);
+
+.xxx {
+  width: $total-width;
+  margin: auto;
+
+  .ng-invalid {
+    // border: none;
+  }
+}
+
+.yyy {
+  width: $total-width;
+
+  input {
+    margin-left: auto; 
+    width: 150px; 
+    height: 100px;
+  }
+}
+
+#left-example {
+  padding: 5px;
+}
+
+#left-example::part(label) {
+  margin-right: var(--spacing-2);
+  margin-bottom: 0;
+  min-width: $label-width;
+}
+
+#left-example::part(form-field) {
+  flex-direction: row;
+  align-items: center;
+  min-width: $input-width;
+
+  rux-input.ng-invalid {
+    border: 2px solid red;
+  }
+}

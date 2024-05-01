@@ -53,7 +53,7 @@ export class BreadcrumbNavComponent {
             case EventType.NavigationEnd: {
               const specificEvent: NavigationEnd = event;
               // console.info('### specificEvent = ', specificEvent);
-              console.error('##### router = ', this.router);
+              // console.error('##### router = ', this.router);
               const url = specificEvent.urlAfterRedirects ?? specificEvent.url;
 
               switch (url) {
