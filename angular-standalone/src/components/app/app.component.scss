@@ -10,13 +10,6 @@ rux-global-status-bar {
   z-index: 100; // fix for popup sometimes appearing beneath items in the body
 }
 
-// rux-clock:part(rux-clock__segment__label-value) {
-// NOT WORKING
-::ng-deep rux-global-status-bar rux-clock {
-  color: red;
-  margin: 0 auto;  
-}
-
 .app-switcher-icon:focus {
   outline-offset: -1px;
 }

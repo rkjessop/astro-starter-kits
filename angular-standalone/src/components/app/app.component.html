@@ -1,13 +1,11 @@
 <div class="classification">{{systemClassification}}</div>
 
-<!-- TODO: cannot bind to component properties -->
-  <!-- hover:app-name="{{applicationName}} v{{version}}" -->
-<rux-global-status-bar 
+<rux-global-status-bar
   app-domain="NG"
   app-name='Space Operations Analysis Workbench'
   username="richard.jessop"
   app-state="Operational Prototype"
-  version="0.1"
+  app-version="v0.1.0"
   menu-icon="apps"
   >
 
@@ -42,23 +40,5 @@
 </rux-global-status-bar>
 
 <app-breadcrumb-nav/>
-
-<!-- TODO: This is a development feature. Remove when no longer needed.-->
-<!--
-<nav>
-  <a class="button"
-     routerLink="/app-workbench-dashboard"
-     routerLinkActive="activebutton"
-     ariaCurrentWhenActive="page">
-    Workbench Dashboard
-  </a> |
-  <a class="button"
-     routerLink="/app-launch-details"
-     routerLinkActive="activebutton"
-     ariaCurrentWhenActive="page">
-    Launch Details
-  </a>
-</nav>
--->
 
 <router-outlet/>
