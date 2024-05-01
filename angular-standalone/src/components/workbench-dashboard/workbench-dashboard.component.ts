@@ -1,6 +1,7 @@
 import { Component, ElementRef } from '@angular/core';
 import { MyCounterComponent } from '../my-counter/my-counter.component';
 import { ScheduledLaunchesComponent } from '../scheduled-launches/scheduled-launches.component';
+import { WebSiteLauncherComponent } from '../web-site-launcher/web-site-launcher.component';
 
 const selectorName = 'app-workbench-dashboard';
 
@@ -10,7 +11,12 @@ const selectorName = 'app-workbench-dashboard';
 @Component({
   selector: selectorName,
   standalone: true,
-  imports: [WorkbenchDashboardComponent, MyCounterComponent, ScheduledLaunchesComponent],
+  imports: [
+    WebSiteLauncherComponent
+    , MyCounterComponent
+    , ScheduledLaunchesComponent
+    , WorkbenchDashboardComponent
+  ],
   templateUrl: './workbench-dashboard.component.html',
   styleUrl: './workbench-dashboard.component.scss'
 })
