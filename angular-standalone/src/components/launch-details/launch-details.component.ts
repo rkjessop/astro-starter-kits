@@ -31,7 +31,6 @@ export class LaunchDetailsComponent {
   
   static selectorName = selectorName;
 
-  athlete: any;
   readonly = false;
 
   state: any;

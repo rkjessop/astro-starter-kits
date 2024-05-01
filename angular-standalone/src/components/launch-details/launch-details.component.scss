@@ -1,14 +1,10 @@
 $label-width: 200px;
-$input-width: 150px;
+$input-width: 250px;
 $total-width: calc($label-width + $input-width);
 
 .xxx {
   width: $total-width;
   margin: auto;
-
-  .ng-invalid {
-    // border: none;
-  }
 }
 
 .yyy {
