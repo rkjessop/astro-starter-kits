@@ -16,7 +16,12 @@ const ROW_HEIGHT = 40;
 @Component({
   selector: 'app-launch-list',
   standalone: true,
-  imports: [AstroComponentsModule, HttpClientModule, AgGridAngular, CommonModule],
+  imports: [
+    AstroComponentsModule
+    , HttpClientModule
+    , AgGridAngular
+    , CommonModule
+  ],
   templateUrl: './launch-list.component.html',
   styleUrl: './launch-list.component.scss'
 })
