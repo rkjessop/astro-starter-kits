@@ -43,22 +43,22 @@ export class LaunchListComponent implements OnInit {
       width: 120
     },
     {
-      headerName: 'Launch Window',
-      field: "age",
-      minWidth: 170,
-      width: 170,
+      headerName: 'Time',
+      field: "time",
+      minWidth: 100,
+      width: 100,
       wrapHeaderText: true
     },
     { 
       headerName: 'Launch Site',
-      field: "athlete",
-      minWidth: 190,
+      field: "site",
+      minWidth: 200,
       width: 210
     },
     {
       headerName: 'Mission Description',
-      field: "sport",
-      width: 100,
+      field: "description",
+      width: 200,
       flex: 1
     }
   ];
@@ -88,7 +88,8 @@ export class LaunchListComponent implements OnInit {
 
   ngOnInit() {
     this.http
-      .get<any[]>("https://www.ag-grid.com/example-assets/olympic-winners.json")
+    // .get<any[]>("https://www.ag-grid.com/example-assets/olympic-winners.json")
+    .get<any[]>("http://localhost:3000/ScheduledLaunches")
       .subscribe((data) => {
         this.rowData$.next(data);
         this.store.dispatch(set({count: data.length}));

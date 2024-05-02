@@ -1,5 +1,5 @@
 $label-width: 200px;
-$input-width: 250px;
+$input-width: 450px;
 $total-width: calc($label-width + $input-width);
 
 .xxx {
@@ -12,7 +12,7 @@ $total-width: calc($label-width + $input-width);
 
   input {
     margin-left: auto; 
-    width: 150px; 
+    width: $input-width; 
     height: 100px;
   }
 }

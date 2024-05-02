@@ -35,16 +35,13 @@ export class LaunchDetailsComponent {
 
   state: any;
   fields = [
-    {field: 'athlete', label: 'Athlete', required: true, type: 'text'}
-    , {field: 'age', label: 'Age', required: false, type: 'number'}
-    , {field: 'country', label: 'Country', required: true, type: 'text'}
-    , {field: 'year', label: 'Year', required: false, type: 'number'}
-    , {field: 'date', label: 'Date', required: false, type: 'text'}
-    , {field: 'sport', label: 'Sport', required: false, type: 'text'}
-    , {field: 'gold', label: '# Gold', required: false, type: 'number'}
-    , {field: 'silver', label: '# Silver', required: false, type: 'number'}
-    , {field: 'bronze', label: '# Bronze', required: false, type: 'number'}
-    , {field: 'total', label: '# Total', required: false, type: 'number'}
+    {field: 'name', label: 'Name', required: true, type: 'text'}
+    , {field: 'date', label: 'Date', required: true, type: 'text'}
+    , {field: 'time', label: 'Time', required: true, type: 'text'}
+    , {field: 'time zone', label: 'Time Zone', required: true, type: 'text'}
+    , {field: 'site', label: 'Site', required: true, type: 'text'}
+    , {field: 'description', label: 'Description', required: false, type: 'text'}
+    , {field: 'last update', label: 'Last Update', required: false, type: 'text'}
   ];
 
   constructor(
