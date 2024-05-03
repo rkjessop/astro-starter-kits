@@ -126,11 +126,8 @@ export class LaunchListComponent implements OnInit {
       const rows: Object[] = []
       
       this.rowData$?.getValue().forEach((row: MyType) => {
-        console.log('- ##### row = ', row);
         const dateStr = row.date + ' ' + row.time + ' ' + row.timeZone;
         const date: Date = new Date(dateStr);
-        console.log('##### dateStr = ', dateStr);
-        console.log('##### date    = ', date.toUTCString());
         const diff = date.valueOf() - now.valueOf();
 
         if (diff < 0) {
@@ -138,12 +135,9 @@ export class LaunchListComponent implements OnInit {
           rows.push({...row, launchTimeDifference: 'T + ' + diffStr});
         } else {
           const diffStr = toDHMS(diff);
-          console.log('##### diffStr = ', diffStr);
           rows.push({...row, launchTimeDifference: 'T - '+ diffStr});
         }
-        // console.log('+ ##### row = ', row);
       });
-      // console.log('##### rows = ', rows);
 
       this.rowData$.next(rows as MyType[]);
     }, 1000);
