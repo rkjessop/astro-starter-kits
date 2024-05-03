@@ -18,6 +18,7 @@ rux-menu-item[value='themeToggle'] span {
   padding-top: 0px;
   gap: var(--spacing-2);
   grid-template-rows: 3.75rem minmax(0, 1fr);
+  grid-template-columns: minmax(400px, auto) minmax(400px, 600px);
   grid-template-areas:
     'left-panel tabs-bar'
     'left-panel right-panel'
@@ -30,6 +31,7 @@ rux-menu-item[value='themeToggle'] span {
 
 .dashboard-page__left-panel {
   grid-area: left-panel;
+  overflow: auto;
 }
 
 .tabs-bar {
@@ -38,5 +40,4 @@ rux-menu-item[value='themeToggle'] span {
 
 .dashboard-page__right-panel {
   grid-area: right-panel;
-  // background-color: coral;
 }
