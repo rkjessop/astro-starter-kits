@@ -4,5 +4,5 @@ $classificationHeight: 21px;
 $statusBarHeight: 96px;
 $breadcrumbHeight: 68px;
 $navBarHeight: 0px;//22px; // used only during prototyping development
-$fixedHeight: calc($classificationHeight + $statusBarHeight + $breadcrumbHeight + $navBarHeight);
-$slosh: 1px; // system reports fractional pixels
+$slosh: 0px; // system reports fractional pixels
+$fixedHeight: calc($classificationHeight + $statusBarHeight + $breadcrumbHeight + $navBarHeight + $slosh);

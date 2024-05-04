@@ -31,7 +31,7 @@ rux-menu-item[value='themeToggle'] span {
 
 .dashboard-page__left-panel {
   grid-area: left-panel;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .tabs-bar {
@@ -40,4 +40,5 @@ rux-menu-item[value='themeToggle'] span {
 
 .dashboard-page__right-panel {
   grid-area: right-panel;
+  overflow: hidden;
 }

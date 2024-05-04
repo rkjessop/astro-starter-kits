@@ -130,7 +130,9 @@ export class LaunchListComponent implements OnInit {
         const date: Date = new Date(dateStr);
         const diff = date.valueOf() - now.valueOf();
 
-        if (diff < 0) {
+        if (isNaN(diff)) {
+          rows.push({...row, launchTimeDifference: 'N/A'});
+        } else if (diff < 0) {
           const diffStr = toDHMS(-diff);
           rows.push({...row, launchTimeDifference: 'T + ' + diffStr});
         } else {
@@ -183,7 +185,6 @@ function convert(num: number): string {
 
 /**
  * converts the number of milliseconds to days:hours:minutes:seconds.
- * If the number of days is 0, its value is not included.
  * @param diff UoM: ms
  */
 function toDHMS(diff: number): string {
@@ -196,6 +197,7 @@ function toDHMS(diff: number): string {
   remainder -= minutes * 60000;
   const seconds: number = Math.trunc(remainder / 1000);
   remainder -= minutes * 1000;
-  return ((days == 0) ? '' : convert(days) + ':') + convert(hours) + ':' + convert(minutes) + ':' + convert(seconds);
+  const excludeDays = false;
+  return (excludeDays ? '' : convert(days) + ':') + convert(hours) + ':' + convert(minutes) + ':' + convert(seconds);
 }
 

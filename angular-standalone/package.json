@@ -21,6 +21,7 @@
     "@angular/router": "^17.1.0",
     "@astrouxds/ag-grid-theme": "^7.0.0",
     "@astrouxds/angular": "^7.20.0",
+    "@nasaworldwind/worldwind": "^0.11.0",
     "@ngneat/until-destroy": "^10.0.0",
     "@ngrx/effects": "^17.2.0",
     "@ngrx/entity": "^17.2.0",
